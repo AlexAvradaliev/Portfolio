@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import * as Scroll from 'react-scroll';
 import { motion } from 'framer-motion';
 
@@ -7,7 +8,31 @@ import { fadeInDown, menu, menuItems } from '../../motion/variants';
 import styles from './Header.module.css';
 
 const Header = () => {
+    const [darkTheme, setDarkTheme] = useState(undefined);
 
+    const handleToggle = () => {
+      setDarkTheme(state => !state);
+    };
+  
+    useEffect(() => {
+      if (darkTheme !== undefined) {
+        if (darkTheme) {
+          document.documentElement.setAttribute('data-theme', 'light-theme');
+          window.localStorage.setItem('theme', 'light-theme');
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+          window.localStorage.setItem('theme', 'dark-theme');
+        }
+      }
+    }, [darkTheme]);
+  
+    useEffect(() => {
+      const root = window.document.documentElement;
+      const initialColorValue = root.style.getPropertyValue(
+        '--initial-color-mode'
+      );
+      setDarkTheme(initialColorValue === 'light-theme');
+    }, []);
     const Links = Scroll.Link;
 
     return (
@@ -83,8 +108,12 @@ const Header = () => {
                     variants={fadeInDown}
                     initial='initial'
                     animate='animate'
+                    onClick={handleToggle}
                 >
-                    <i className={`bx bx-moon ${styles.change__theme}`} id='theme-button'></i>
+                   {darkTheme
+                ? <i className={`bx bx-sun ${styles.change__theme}`} id='theme-button'></i>
+                : <i className={`bx bx-moon ${styles.change__theme}`} id='theme-button'></i>
+              }
                 </motion.span>
             </nav>
         </header>
