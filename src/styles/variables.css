@@ -1,0 +1,45 @@
+:root {
+    --header-height: 3.5rem;
+  
+    /*========== Colors ==========*/
+    --first-color: #a395e9;
+    --first-color-alt: #9584e6;
+    --title-color: #f0f2f4;
+    --text-color: #babec4;
+    --text-color-light: #888b91;
+    --body-color: #0b111e;
+    --container-color: #151c28;
+  
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+    --biggest-font-size: 1.75rem;
+    --h2-font-size: 1.25rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+    --tiny-font-size: .625rem;
+  
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semibold: 600;
+  
+    /*========== z index ==========*/
+    --z-fixed: 100;
+  }
+
+  [data-theme='light-theme']{
+    --title-color: #21252c;
+    --text-color: #525760;
+    --body-color: #fafcff;
+    --container-color: #fff;
+  }
+  
+  @media screen and (min-width: 968px) {
+    :root {
+      --biggest-font-size: 2.5rem;
+      --h2-font-size: 1.5rem;
+      --normal-font-size: 1rem;
+      --small-font-size: .875rem;
+      --smaller-font-size: .813rem;
+    }
+  }
