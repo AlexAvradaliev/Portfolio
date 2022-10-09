@@ -77,7 +77,7 @@ useEffect (() => {
                             initial='initial'
                             animate='animate'
                             className={styles.nav__item}>
-                            <Links activeClass={styles.active} className={`${styles.nav__link} ${styles.active}`} to='home' spy={true} offset={-58} duration={500}>
+                            <Links activeClass={styles.active} className={styles.nav__link} to='home' spy={true} offset={-58} duration={500}>
                                 <i className='bx bx-home'></i>
                             </Links>
                         </motion.li>

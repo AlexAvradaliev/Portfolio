@@ -1,0 +1,123 @@
+.about__container {
+    row-gap: 2.5rem;
+}
+
+.about__img {
+    width: 220px;
+    -ms-grid-column-align: center;
+        justify-self: center;
+
+}
+
+.about__data {
+    text-align: center;
+}
+
+.about__info {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr .5rem 1fr .5rem 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .5rem;
+    margin-bottom: 2rem;
+}
+
+.about__box {
+    background-color: var(--container-color);
+    border-radius: .75rem;
+    padding: .75rem .5rem;
+}
+
+.about__icon {
+    font-size: 1.5rem;
+    color: var(--first-color);
+    margin-bottom: .5rem;
+}
+
+.about__title {
+    font-size: var(--small-font-size);
+
+}
+
+.about__subtitle {
+    font-size: var(--tiny-font-size);
+}
+
+.about__description {
+    margin-bottom: 2rem;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--first-color);
+    color: var(--body-color);
+    padding: .75rem 1rem;
+    border-radius: .5rem;
+    font-weight: var(--font-medium);
+    -webkit-transition: .4s;
+    -o-transition: .4s;
+    transition: .4s;
+}
+
+.button:hover {
+    background-color: var(--first-color-alt);
+    color: var(--body-color);
+}
+
+@media(max-width: 320px) {
+    .about__info {
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(min-width: 576px) {
+    .about__info {
+        -ms-grid-columns: 140px 140px 140px; 
+        grid-template-columns: repeat(3, 140px);
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+    }
+
+    .about__description {
+        padding: 0 5rem;
+    }
+}
+
+@media(min-width: 992px) {
+    .about__container {
+        -ms-grid-columns: 1fr 4rem 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-column-gap: 4rem;
+           -moz-column-gap: 4rem;
+                column-gap: 4rem;
+    }
+
+    .about__data {
+        text-align: initial;
+    }
+
+    .about__info {
+        -webkit-box-pack: initial;
+            -ms-flex-pack: initial;
+                justify-content: initial;
+    }
+
+    .about__box {
+        text-align: center;
+        padding: 1rem 1.25rem;
+    }
+
+    .about__description {
+        padding: 0 4rem 0 0;
+        margin-bottom: 2.5rem;
+    }
+
+    .about__img {
+        width: 350px;
+    }
+}
