@@ -79,3 +79,15 @@ input[data-autocompleted] {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #2f3237;
 }
+
+[data-theme='light-theme']::-webkit-scrollbar {
+  background-color: hsla(219, 8%, 66%);
+}
+
+[data-theme='light-theme']::-webkit-scrollbar-thumb {
+  background-color: hsla(219, 8%, 54%);
+}
+
+[data-theme='light-theme']::-webkit-scrollbar-thumb:hover {
+  background-color: hsla(219, 8%, 44%);
+}

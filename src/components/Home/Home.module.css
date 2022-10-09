@@ -1,0 +1,219 @@
+.home__container {
+  position: relative;
+  row-gap: 4.5rem;
+  padding-top: 2rem;
+}
+
+.home__data {
+  text-align: center;
+}
+
+.home__greeting,
+.home__education {
+  font-size: var(--small-font-size);
+    font-weight: var(--font-medium);
+    color: var(--title-color);
+}
+
+.home__greeting {
+  display: block;
+  margin-bottom: .25rem;
+}
+
+.home__education {
+  margin-bottom: 2.5rem;
+}
+
+.home__name {
+  font-size: var(--biggest-font-size);
+}
+
+.home__img {
+  width: 160px;
+  max-width: 100%;
+
+}
+
+.home__handle {
+  justify-self: center;
+  width: 190px;
+  height: 293px;
+  background: -webkit-gradient(linear,
+      left top, left bottom,
+      from(rgb(163, 149, 233)),
+      to(rgba(163, 149, 233, 0.2)));
+  background: -o-linear-gradient(top,
+      rgb(163, 149, 233),
+      rgba(163, 149, 233, 0.2));
+  background: linear-gradient(180deg,
+      rgb(163, 149, 233),
+      rgba(163, 149, 233, 0.2));
+  border-radius: 10rem 10rem 1rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.home__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.home__social,
+.home__scroll {
+  position: absolute;
+}
+
+.home__social {
+  bottom: 5rem;
+  left: 0;
+  display: -ms-grid;
+  display: grid;
+  row-gap: .5rem;
+}
+
+.home__social__link {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background: var(--container-color);
+  color: var(--first-color);
+  padding: .25rem;
+  border-radius: .25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+}
+
+.home__social__link:hover {
+  background-color: var(--first-color);
+  color: #fff;
+}
+
+.home__social::after {
+  content: '';
+  width: 32px;
+  height: 2px;
+  background-color: var(--first-color);
+  -webkit-transform: rotate(90deg) translate(16px, 3px);
+  -ms-transform: rotate(90deg) translate(16px, 3px);
+  transform: rotate(90deg) translate(16px, 3px);
+}
+
+.home__scroll {
+  color: var(--first-color);
+  bottom: 4rem;
+  right: -1.5rem;
+  display: -ms-grid;
+  display: grid;
+  row-gap: 2.25rem;
+  justify-items: center;
+}
+
+.home__scroll__icon {
+  font-size: 1.25rem;
+}
+
+.home__scroll__name {
+  font-size: var(--smaller-font-size);
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--first-color);
+  color: var(--body-color);
+  padding: .75rem 1rem;
+  border-radius: .5rem;
+  font-weight: var(--font-medium);
+ 
+}
+
+.button:hover {
+  background-color: var(--first-color-alt);
+  color: var(--body-color);
+}
+
+.button__ghost {
+  background-color: transparent;
+  border: 2px solid var(--first-color);
+  color: var(--first-color);
+}
+
+[data-theme='light-theme'] .home__social__link {
+    box-shadow: 0 2px 8px hsla(219, 48%, 8%, .1);
+  }
+
+[data-theme='light-theme'] .home__social::after {
+  background-color: var(--title-color);
+}
+
+[data-theme='light-theme'] .home__social__link,
+[data-theme='light-theme'] .home__scroll,
+[data-theme='light-theme'] .button,
+[data-theme='light-theme'] .button:hover{
+  color: var(--title-color);
+}
+
+
+@media(max-width: 320px) {
+  .home__buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .home__handle {
+    width: 150px;
+    height: 253px;
+  }
+
+  .home__img {
+    width: 130px;
+  }
+}
+
+@media(min-width: 992px) {
+  .home__handle {
+    width: 290px;
+    height: 400px;
+  }
+
+  .home__img {
+    width: 220px;
+  }
+
+  .home__social-link {
+    padding: .4rem;
+    font-size: 1.25rem;
+  }
+
+  .home__social::after {
+    -webkit-transform: rotate(90deg) translate(16px, 0);
+    -ms-transform: rotate(90deg) translate(16px, 0);
+    transform: rotate(90deg) translate(16px, 0);
+  }
+
+  .home__scroll-icon {
+    font-size: 2rem;
+  }
+}

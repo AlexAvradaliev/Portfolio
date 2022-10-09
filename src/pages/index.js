@@ -1,12 +1,32 @@
 import Header from '../components/Header/Header';
-import styles from '../styles/Home.module.css';
+import Home from '../components/Home/Home';
 
-const Home = () => {
+import  {homeHeading, homeSocial}  from '../data/homeData';
+
+import styles from '../styles/Index.module.css';
+
+const Index = ({
+  homeHeading,
+  
+}) => {
   return (
     <>
-    <Header />
+      <Header />
+      <main className={styles.main}>
+        <Home homeHeading={homeHeading} homeSocial={homeSocial}/>
+      </main>
     </>
   )
 };
 
-export default Home;
+export const getStaticProps = async () => {
+  return {
+    props: {
+      homeHeading,
+      homeSocial
+    },
+  };
+};
+
+export default Index;
+
