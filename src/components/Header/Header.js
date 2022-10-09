@@ -9,11 +9,12 @@ import styles from './Header.module.css';
 
 const Header = () => {
     const [darkTheme, setDarkTheme] = useState(undefined);
+    const [shadow, setShadow] = useState(false);
 
     const handleToggle = () => {
       setDarkTheme(state => !state);
     };
-  
+
     useEffect(() => {
       if (darkTheme !== undefined) {
         if (darkTheme) {
@@ -35,8 +36,23 @@ const Header = () => {
     }, []);
     const Links = Scroll.Link;
 
+const changeShadow = () => {
+    if(window.scrollY >= 50) {
+        setShadow(true);
+    } else {
+        setShadow(false);
+    };
+};
+
+useEffect (() => {
+    function activeShadow () {
+        window.addEventListener('scroll', changeShadow)
+    }
+    activeShadow ()
+})
+
     return (
-        <header className={styles.header} id="header">
+        <header className={`${styles.header} ${shadow ? styles.scroll__header : ''}`} id="header">
             <nav className={styles.nav}>
                 <Link href='/'>
                     <motion.a
