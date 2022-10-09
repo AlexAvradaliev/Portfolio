@@ -25,10 +25,10 @@ export const fadeInDown = {
 
   export const menuItems = {
     initial: { scale: 0, opacity:0},
-    animate: { scale: 1, opacity: 1, transition: { duration: 1, delay: 0.7}},
+    animate: { scale: 1, opacity: 1, transition: { duration: 1, delay: 0.7}}
   };
 
   export const image = {
     initial: { scale: 0, opacity:0},
-    animate: { scale: 1, opacity: 1, transition: { type: 'spring', duration: 1.5, }},
+    animate: { scale: 1, opacity: 1, transition: { type: 'spring', duration: 1.5, }}
   };

@@ -16,7 +16,7 @@ const About = ({
     const {ref, inView} = useInView({threshold:0.2});
     
     return (
-        <section ref={ref} className={styles.about} id='about'>
+        <section ref={ref} className={`${styles.section} ${styles.about}`} id='about'>
             <SectionTitle inView={inView} title='About' secondTitle='Me' subTitle='Resume' />
             <Container containerStyle={styles.about__container}>
                 <motion.div

@@ -1,12 +1,12 @@
 import styles from './Section.module.css';
 
-const Section = (props) => {
+const Section = (props)  => {
 const sectionStyle = props.sectionStyle 
                     ? props.sectionStyle 
                     : ''
 
     return (
-        <section className={`${styles.section} ${sectionStyle}`} id={props.id}>
+        <section ref={props.ref} className={`${styles.section} ${sectionStyle}`} id={props.id}>
             {props.children}
         </section>
     );

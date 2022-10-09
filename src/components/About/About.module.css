@@ -4,13 +4,11 @@
 
 .about__container {
     row-gap: 2.5rem;
+    justify-items: center;
 }
 
 .about__img {
     width: 220px;
-    -ms-grid-column-align: center;
-        justify-self: center;
-
 }
 
 .about__data {
@@ -66,6 +64,15 @@
 .button:hover {
     background-color: var(--first-color-alt);
     color: var(--body-color);
+}
+
+[data-theme='light-theme'] .about__box {
+  box-shadow: 0 2px 8px hsla(219, 48%, 8%, .1);
+}
+
+[data-theme='light-theme'] .button,
+[data-theme='light-theme'] .button:hover {
+  color: var(--title-color);
 }
 
 @media(max-width: 320px) {
