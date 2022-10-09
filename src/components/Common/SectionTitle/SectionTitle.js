@@ -9,7 +9,7 @@ const SectionTitle = (props) => {
         <motion.div
             variants={fadeInDown}
             initial='initial'
-            animate='animate'
+            animate={props.inView ?'animate' : 'initial'}
             className={styles.title}
         >
             <span className={styles.section__subtitle}>{props.subTitle}</span>

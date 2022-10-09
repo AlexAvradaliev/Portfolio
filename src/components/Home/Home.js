@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/future/image';
 import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
-import {  fadeInUp, fadeInLeft, fadeInRight, image } from '../../motion/variants';
+import { fadeInUp, fadeInLeft, fadeInRight, image } from '../../motion/variants';
 import Container from '../Common/Container/Container';
-import Section from '../Common/Section/Section';
 
 import styles from './Home.module.css';
 
@@ -13,30 +13,32 @@ const Home = ({
   homeSocial
 }) => {
 
+  const { ref, inView } = useInView({ threshold: 0.2 });
+
   return (
-    <Section id={'home'}>
+    <section ref={ref} id='home'>
       <Container containerStyle={styles.home__container}>
         <div className={styles.home__data}>
           <motion.span
-          variants={fadeInLeft}
-          initial='initial'
-          animate='animate'
+            variants={fadeInLeft}
+            initial='initial'
+            animate={inView ? 'animate' : 'initial'}
             className={styles.home__greeting}
           >
             {homeHeading.greeting}
           </motion.span>
           <motion.h1
-          variants={fadeInRight}
-          initial='initial'
-          animate='animate'
+            variants={fadeInRight}
+            initial='initial'
+            animate={inView ? 'animate' : 'initial'}
             className={styles.home__name}
           >
             {homeHeading.name}
           </motion.h1>
           <motion.h3
-          variants={fadeInLeft}
-          initial='initial'
-          animate='animate'
+            variants={fadeInLeft}
+            initial='initial'
+            animate={inView ? 'animate' : 'initial'}
             className={styles.home__education}
           >
             {homeHeading.education}
@@ -47,7 +49,7 @@ const Home = ({
               <motion.a
                 variants={fadeInRight}
                 initial='initial'
-                animate='animate'
+                animate={inView ? 'animate' : 'initial'}
                 target='_blank'
                 download
                 className={`${styles.button} ${styles.button__ghost}`}
@@ -61,7 +63,7 @@ const Home = ({
               <motion.a
                 variants={fadeInLeft}
                 initial='initial'
-                animate='animate'
+                animate={inView ? 'animate' : 'initial'}
 
                 href="#about"
                 className={styles.button}
@@ -76,7 +78,7 @@ const Home = ({
         <motion.div
           variants={image}
           initial='initial'
-          animate='animate'
+          animate={inView ? 'animate' : 'initial'}
           className={styles.home__handle}
         >
           <Image src={homeHeading.image} width={160} height={263} alt="" className={styles.home__img} />
@@ -85,7 +87,7 @@ const Home = ({
         <motion.div
           variants={fadeInUp}
           initial='initial'
-          animate='animate'
+          animate={inView ? 'animate' : 'initial'}
           className={styles.home__social}
         >
           {
@@ -104,7 +106,7 @@ const Home = ({
         <motion.a
           variants={fadeInUp}
           initial='initial'
-          animate='animate'
+          animate={inView ? 'animate' : 'initial'}
           href="#about"
           className={styles.home__scroll}
         >
@@ -113,7 +115,7 @@ const Home = ({
         </motion.a>
 
       </Container>
-    </Section>
+    </section>
   )
 };
 

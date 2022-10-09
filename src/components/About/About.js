@@ -1,9 +1,9 @@
 import Image from 'next/future/image';
 import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 import { fadeInLeft, fadeInRight } from '../../motion/variants';
 import Container from '../Common/Container/Container';
-import Section from '../Common/Section/Section';
 
 import styles from './About.module.css';
 import SectionTitle from '../Common/SectionTitle/SectionTitle';
@@ -13,21 +13,23 @@ const About = ({
     aboutInfo
 }) => {
 
+    const {ref, inView} = useInView({threshold:0.2});
+    
     return (
-        <Section sectionStyle={styles.about} id='about'>
-            <SectionTitle title='About' secondTitle='Me' subTitle='Resume' />
+        <section ref={ref} className={styles.about} id='about'>
+            <SectionTitle inView={inView} title='About' secondTitle='Me' subTitle='Resume' />
             <Container containerStyle={styles.about__container}>
                 <motion.div
                 variants={fadeInRight}
                 initial='initial'
-                animate='animate'
+                animate={inView ?'animate' : 'initial'}
                 >
                     <Image src={aboutInfo.image} alt="Aleksandar Avradaliev" className={styles.about__img} />
                 </motion.div>
                 <motion.div
                  variants={fadeInLeft}
                  initial='initial'
-                 animate='animate'
+                 animate={inView ?'animate' : 'initial'}
                  className={styles.about__data}
                  >
                     <div className={styles.about__info}>
@@ -47,7 +49,7 @@ const About = ({
                 </motion.div>
 
             </Container>
-        </Section>
+        </section>
     )
 };
 
