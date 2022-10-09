@@ -1,3 +1,7 @@
+.section {
+  padding: 4.5rem 0 1rem;
+}
+
 .home__container {
   position: relative;
   row-gap: 4.5rem;

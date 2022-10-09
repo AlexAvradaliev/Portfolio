@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/future/image';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Typewriter from 'typewriter-effect';
 
 import { fadeInUp, fadeInLeft, fadeInRight, image } from '../../motion/variants';
 import Container from '../Common/Container/Container';
@@ -16,7 +17,7 @@ const Home = ({
   const { ref, inView } = useInView({ threshold: 0.2 });
 
   return (
-    <section ref={ref} id='home'>
+    <section className={styles.section} ref={ref} id='home'>
       <Container containerStyle={styles.home__container}>
         <div className={styles.home__data}>
           <motion.span
@@ -28,12 +29,19 @@ const Home = ({
             {homeHeading.greeting}
           </motion.span>
           <motion.h1
-            variants={fadeInRight}
-            initial='initial'
-            animate={inView ? 'animate' : 'initial'}
+            // variants={fadeInRight}
+            // initial='initial'
+            // animate={inView ? 'animate' : 'initial'}
             className={styles.home__name}
           >
-            {homeHeading.name}
+            <Typewriter
+              options={{
+               autoStart:inView,
+               delay: 100,
+               strings: homeHeading.name,
+              }}
+            />
+
           </motion.h1>
           <motion.h3
             variants={fadeInLeft}
