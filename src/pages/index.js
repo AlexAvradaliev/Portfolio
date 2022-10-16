@@ -1,15 +1,17 @@
-import Header from '../components/Header/Header';
-import Home from '../components/Home/Home';
-
 import { homeHeading, homeSocial } from '../data/homeData';
 import { aboutBox, aboutInfo } from '../data/dataAbout';
 import { frontend, backend } from '../data/dataSkills';
 import { worksInfo } from '../data/dataWorks';
+import { FormProvider } from '../components/Contact/context/formContext';
 
-import styles from '../styles/Index.module.css';
+import Header from '../components/Header/Header';
+import Home from '../components/Home/Home';
 import About from '../components/About/About';
 import Skills from '../components/Skills/Skills';
 import Works from '../components/Works/Works';
+import Contact from '../components/Contact/Contact';
+
+import styles from '../styles/Index.module.css';
 
 const Index = ({
   homeHeading,
@@ -26,6 +28,9 @@ const Index = ({
         <About aboutBox={aboutBox} aboutInfo={aboutInfo}/>
         <Skills frontend={frontend} backend={backend} />
         <Works worksInfo={worksInfo} />
+        <FormProvider>
+          <Contact />
+        </FormProvider>
       </main>
     </>
   )
