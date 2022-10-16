@@ -4,6 +4,7 @@
     background-color: rgba(29, 37, 52, 0.7);
     padding: 2rem 1rem;
     z-index: 1000;
+    display: -ms-grid;
     display: grid;
     place-items: center;
 }
@@ -41,15 +42,22 @@
 }
 
 .info{
+    display: -ms-grid;
     display: grid;
     gap: .75rem;
     padding: 2rem 1.5rem;
 }
 
 .info__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    column-gap: .5rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-column-gap: .5rem;
+       -moz-column-gap: .5rem;
+            column-gap: .5rem;
 }
 
 .info__item>i {
@@ -82,6 +90,7 @@ a.info__desc:hover{
 
 @media(min-width: 676px) {
     .info{
+        -ms-grid-columns: 1fr 1.5rem 1fr;
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
