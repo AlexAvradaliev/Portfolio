@@ -63,6 +63,16 @@
   font-size: var(--smaller-font-size);
 }
 
+  [data-theme='light-theme'] .footer__social__link {
+    background-color: var(--title-color);
+  }
+
+  [data-theme='light-theme'] .footer__link,
+  [data-theme='light-theme'] .footer__title,
+  [data-theme='light-theme'] .footer__copy {
+    color: var(--title-color);
+  }
+
 @media(min-width: 992px) {
   .footer__container {
     margin-left: auto;

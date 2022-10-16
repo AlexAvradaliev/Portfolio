@@ -24,9 +24,6 @@ textarea {
 body {
   background-color: var(--body-color);
   color: var(--text-color);
-  -webkit-transition: .4s;
-  -o-transition: .4s;
-  transition: .4s;
 }
 
 h1,

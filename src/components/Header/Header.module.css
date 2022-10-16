@@ -10,9 +10,6 @@
    width: 100%;
    background-color: var(--body-color);
    z-index: var(--z-fixed);
-   -webkit-transition: .4s;
-   -o-transition: .4s;
-   transition: .4s;
  }
 
  .nav {
@@ -81,9 +78,6 @@
  .change__theme {
    font-size: 1.25rem;
    cursor: pointer;
-   -webkit-transition: .3s;
-   -o-transition: .3s;
-   transition: .3s;
  }
 
  .change__theme:hover {
