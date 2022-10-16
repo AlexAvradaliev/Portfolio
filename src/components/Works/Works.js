@@ -1,5 +1,3 @@
-import Image from 'next/future/image';
-
 import { useInView } from 'react-intersection-observer';
 
 import Container from '../Common/Container/Container';
