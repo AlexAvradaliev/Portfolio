@@ -12,6 +12,7 @@ import Works from '../components/Works/Works';
 import Contact from '../components/Contact/Contact';
 
 import styles from '../styles/Index.module.css';
+import Footer from '../components/Footer/Footer';
 
 const Index = ({
   homeHeading,
@@ -25,12 +26,13 @@ const Index = ({
       <Header />
       <main className={styles.main}>
         <Home homeHeading={homeHeading} homeSocial={homeSocial} />
-        <About aboutBox={aboutBox} aboutInfo={aboutInfo}/>
+        <About aboutBox={aboutBox} aboutInfo={aboutInfo} />
         <Skills frontend={frontend} backend={backend} />
         <Works worksInfo={worksInfo} />
         <FormProvider>
           <Contact />
         </FormProvider>
+        <Footer homeSocial={homeSocial} />
       </main>
     </>
   )
