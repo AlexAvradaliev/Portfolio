@@ -1,7 +1,7 @@
 .modal {
     position: fixed;
     inset: 0;
-    background-color: rgba(29, 37, 52, 0.7);
+    background-color: rgba(29, 37, 52, 0.8);
     padding: 2rem 1rem;
     z-index: 1000;
     display: -ms-grid;
